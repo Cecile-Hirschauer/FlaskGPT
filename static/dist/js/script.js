@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } finally {
             spinnerIcon.classList.add('hidden');
             sendIcon.classList.remove('hidden')
+            hljs.highlightAll();
         }
     })
 });
