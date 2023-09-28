@@ -20,7 +20,7 @@ function getChatHistory() {
 }
 
 async function fetchPromptResponse() {
-    await fetch('/prompt', {
+    const response = await fetch('/prompt', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -29,6 +29,8 @@ async function fetchPromptResponse() {
             'messages': getChatHistory()
         })
     })
+
+    return response.body.getReader();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
